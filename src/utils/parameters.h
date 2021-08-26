@@ -14,4 +14,10 @@ const float I_yy = 16.0e-6; // kg.m^2
 const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
+// Angular velocity parameters
+// Lab2
+const float a2_pwm = 1.16e-07;
+const float a1_pwm = 4.488e-12;
+const float a0_pwm = 0;
+
 #endif
