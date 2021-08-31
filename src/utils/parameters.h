@@ -20,4 +20,8 @@ const float a2_pwm = 1.16e-07;
 const float a1_pwm = 4.488e-12;
 const float a0_pwm = 0;
 
+// Constante de sustentacao
+// Lab3
+const float kl = 1.726e-08;
+
 #endif
