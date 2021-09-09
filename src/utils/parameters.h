@@ -24,4 +24,8 @@ const float a0_pwm = 0;
 // Lab3
 const float kl = 1.726e-08;
 
+// Constante de arrasto
+// Lab4
+const float kd = 1.313e-10;
+
 #endif
