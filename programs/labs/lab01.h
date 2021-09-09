@@ -11,10 +11,10 @@ DigitalOut m4_r(LED_RED_L,!false);
 DigitalOut m4_g(LED_GREEN_L,!false);
 
 // Define all motors as PWM objects
-PwmOut motor1(MOTOR1);
-PwmOut motor2(MOTOR2);
-PwmOut motor3(MOTOR3);
-PwmOut motor4(MOTOR4);
+PwmOut motor_1(MOTOR1);
+PwmOut motor_2(MOTOR2);
+PwmOut motor_3(MOTOR3);
+PwmOut motor_4(MOTOR4);
 
 // Main program
 int main()
@@ -32,25 +32,25 @@ int main()
     wait(1);
 
     // Test all motors with different frequencies (to make different noises)
-    motor1 = 0.2;
-    motor1.period(1.0/400);
+    motor_1 = 0.2;
+    motor_1.period(1.0/400);
     wait(3);
-    motor1 = 0;
+    motor_1 = 0;
 
-    motor2 = 0.2;
-    motor2.period(1.0/600);
+    motor_2 = 0.2;
+    motor_2.period(1.0/600);
     wait(3);
-    motor2 = 0;
+    motor_2 = 0;
 
-    motor3 = 0.2;
-    motor3.period(1.0/800);
+    motor_3 = 0.2;
+    motor_3.period(1.0/800);
     wait(3);
-    motor3 = 0;
+    motor_3 = 0;
 
-    motor4 = 0.2;
-    motor4.period(1.0/1000);
+    motor_4 = 0.2;
+    motor_4.period(1.0/1000);
     wait(3);
-    motor4 = 0;
+    motor_4 = 0;
     
     // Turn off red LEDs indicating motors are disarmed
     m1_r = !m1_r;
