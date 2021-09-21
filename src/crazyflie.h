@@ -19,4 +19,7 @@
 // #include "drivers/vl53l1x.h"    // Range sensor
 // #include "drivers/pmw3901.h"    // Optical flow sensor
 
+// Mixer
+#include "modules/mixer.h"
+
 #endif
