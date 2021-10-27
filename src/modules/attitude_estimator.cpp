@@ -43,11 +43,16 @@ void AttitudeEstimator::estimate()
     r = imu.gz - r_bias;
 
     float phi_a = atan2(-imu.ay, -imu.az);
-    float theta_a = atan2(imu.ax, -((imu.az>0)-(imu.az<0))*sqrt(pow(imu.ay,2) + pow(imu.az,2)) );
+    float theta_a = atan2(imu.ax, -imu.az);
+    // float phi_a = atan2(-imu.ay, -imu.az);
+    // float theta_a = atan2(imu.ax, -((imu.az>0)-(imu.az<0))*sqrt(pow(imu.ay,2) + pow(imu.az,2)) );
 
-    float phi_g = phi_old + ( p + sin(phi_old)*tan(theta_old)*q + cos(phi_old)*tan(theta_old)*r )*dt;
-    float theta_g = theta_old + ( cos(phi_old)*q - sin(phi_old)*r )*dt;
-    float psi_g = psi_old + ( sin(phi_old)*(1/cos(theta_old))*q + cos(phi_old)*(1/cos(theta_old))*r )*dt;
+    float phi_g = phi_old + p*dt;
+    float theta_g = theta_old + q*dt;
+    float psi_g = psi_old + r*dt;
+    // float phi_g = phi_old + ( p + sin(phi_old)*tan(theta_old)*q + cos(phi_old)*tan(theta_old)*r )*dt;
+    // float theta_g = theta_old + ( cos(phi_old)*q - sin(phi_old)*r )*dt;
+    // float psi_g = psi_old + ( sin(phi_old)*(1/cos(theta_old))*q + cos(phi_old)*(1/cos(theta_old))*r )*dt;
     
     phi = phi_g*(1-alfa) + phi_a*alfa;
     theta = theta_g*(1-alfa) + theta_a*alfa;
