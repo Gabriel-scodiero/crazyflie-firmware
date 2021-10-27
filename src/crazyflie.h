@@ -22,4 +22,7 @@
 // Mixer
 #include "modules/mixer.h"
 
+// Attitude estimator
+#include "modules/attitude_estimator.h"
+
 #endif
