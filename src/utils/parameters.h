@@ -35,4 +35,14 @@ const float dt = 1.0/500;
 const float wc = 1;
 const float alfa = (wc*dt)/(1+(wc*dt));
 
+// Lab8
+// Ganhos proporcionais controladores angulares
+const float kp_row = 0;
+const float kp_pitch = kp_row;
+const float kp_yaw = 0;
+// Ganhos derivativos controladores angulares
+const float kd_row = 0;
+const float kd_pitch = kd_row;
+const float kd_yaw = 0;
+
 #endif
