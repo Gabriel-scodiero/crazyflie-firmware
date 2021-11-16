@@ -28,4 +28,7 @@
 // Attitude controller
 #include "modules/attitude_controller.h"
 
+// Vertical estimator
+#include "modules/vertical_estimator.h"
+
 #endif
