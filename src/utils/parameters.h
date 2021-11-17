@@ -54,4 +54,10 @@ const float amort = sqrt(2)/2;
 const float l1 = pow(wc_vert,2);
 const float l2 = 2*wc_vert*amort;
 
+// Lab10
+// Ganho proporcional controlador vertical
+const float kp_z = 5.8567;
+// Ganho derivativo controlador vertical
+const float kd_z = 3.4225;
+
 #endif

@@ -31,4 +31,7 @@
 // Vertical estimator
 #include "modules/vertical_estimator.h"
 
+// Vertical controller
+#include "modules/vertical_controller.h"
+
 #endif

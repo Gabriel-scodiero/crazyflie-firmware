@@ -11,7 +11,6 @@ AttitudeController::AttitudeController()
 // Control torques (N.m) given reference angles (rad) and current angles (rad) and angular velocities (rad/s)
 void AttitudeController::control(float phi_r, float theta_r, float psi_r, float phi, float theta , float psi , float p, float q, float r)
 {
-
     float alfa_phi = control_siso(phi_r, phi, p, kp_row, kd_row);
     float alfa_theta = control_siso(theta_r, theta, q, kp_pitch, kd_pitch);
     float alfa_psi = control_siso(psi_r, psi, r, kp_yaw, kd_yaw);
