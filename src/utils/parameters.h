@@ -60,4 +60,11 @@ const float kp_z = 5.8567;
 // Ganho derivativo controlador vertical
 const float kd_z = 3.4225;
 
+// Lab11
+// Parâmetros sensor estimador valocidade horizontal
+const float sigma = (2*tan((42*pi/180)/2))/(420*dt);
+// Filtro passa baixa
+const float wc_hor = 50;
+const float l3 = wc_hor;
+
 #endif
