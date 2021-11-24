@@ -3,7 +3,7 @@
 // Class constructor
 VerticalController::VerticalController()
 {
-
+    f_t = 0.0;
 }
 
 // Control thrust force (N) given vertical position (m) and velocity (m/s)
