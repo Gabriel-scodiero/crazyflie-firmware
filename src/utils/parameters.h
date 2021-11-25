@@ -36,14 +36,23 @@ const float wc = 1;
 const float alfa = (wc*dt)/(1+(wc*dt));
 
 // Lab8
-// Ganhos proporcionais controladores angulares
-const float kp_row = 240.2808379;
+// Ganhos controlador atitude (row)
+const float OS_row = 0.005;
+const float Ts_row = 0.3;
+const float zeta_row = abs(log(OS_row))/sqrt(pow(log(OS_row),2) + pow(pi,2));
+const float wn_row = 4/(zeta_row*Ts_row);
+const float kp_row = pow(wn_row,2);
+const float kd_row = 2*zeta_row*wn_row;
+// Ganhos controlador atitude (pitch)
 const float kp_pitch = kp_row;
-const float kp_yaw = 60.07020954;
-// Ganhos derivativos controladores angulares
-const float kd_row = 26.66666665;
 const float kd_pitch = kd_row;
-const float kd_yaw = 13.33333333;
+// Ganhos controlador atitude (yaw)
+const float OS_yaw = 0.005;
+const float Ts_yaw = 0.6;
+const float zeta_yaw = abs(log(OS_yaw))/sqrt(pow(log(OS_yaw),2) + pow(pi,2));
+const float wn_yaw = 4/(zeta_yaw*Ts_yaw);
+const float kp_yaw = pow(wn_yaw,2);
+const float kd_yaw = 2*zeta_yaw*wn_yaw;
 
 // Lab9
 // Intervalo tempo estimador vertical
@@ -55,10 +64,13 @@ const float l1 = pow(wc_vert,2);
 const float l2 = 2*wc_vert*amort;
 
 // Lab10
-// Ganho proporcional controlador vertical
-const float kp_z = 5.8567;
-// Ganho derivativo controlador vertical
-const float kd_z = 3.4225;
+// Ganhos controlador vertical
+const float OS_z = 0.005;
+const float Ts_z = 2;
+const float zeta_z = abs(log(OS_z))/sqrt(pow(log(OS_z),2) + pow(pi,2));
+const float wn_z = 4/(zeta_z*Ts_z);
+const float kp_z = pow(wn_z,2);
+const float kd_z = 2*zeta_z*wn_z;
 
 // Lab11
 // Parâmetros sensor estimador valocidade horizontal
@@ -66,5 +78,14 @@ const float sigma = (2*tan((42*pi/180)/2))/(420*dt);
 // Filtro passa baixa
 const float wc_hor = 50;
 const float l3 = wc_hor;
+
+// Lab12
+// Ganhos controlador horizontal (x)
+const float kp_x = kp_z;
+const float kd_x = kd_z;
+// Ganhos controlador horizontal (y)
+const float kp_y = kp_z;
+const float kd_y = kd_z;
+
 
 #endif
