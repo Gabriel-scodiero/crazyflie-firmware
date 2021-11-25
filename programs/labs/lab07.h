@@ -13,16 +13,14 @@ char command;
 AttitudeEstimator att_est;
 
 // Define Ticker objects
-Ticker tic;
+Ticker tic, tic_range;
 
 // Define Interrupt flag and count variables
-bool flag;
+bool flag, flag_range;
 
 // Define Caalback functions
-void callback()
-{
-    flag = true;
-}
+void callback() { flag = true; }
+void callback_range() { flag_range = true; }
 
 // Main program
 int main()
@@ -32,6 +30,7 @@ int main()
 
     // Initialize interrupt
     tic.attach(&callback, dt);
+    tic_range.attach(&callback_range, dt_range);
 
     while (true)
     {
@@ -40,15 +39,11 @@ int main()
         {
             flag = false;
             att_est.estimate();
-        }    
-        // Print attitude
-        if (serial.readable())
-        {
-            command = serial.getc();
-            if (command == 'p') {
-                serial.printf("%f,%f,%f\n",att_est.phi,att_est.theta,att_est.psi);
+            if ( flag_range )
+            {
+                flag_range = false ;
+                serial.printf("%f, %f, %f\n",att_est.phi, att_est.theta, att_est.psi);
             }
-        }
+        }    
     }
-
 }

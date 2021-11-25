@@ -17,6 +17,8 @@ void AttitudeEstimator::init()
 {
     imu.init();
 
+    wait(1);
+
     // Calibrar giroscópio
     float gx_total;
     float gy_total;
