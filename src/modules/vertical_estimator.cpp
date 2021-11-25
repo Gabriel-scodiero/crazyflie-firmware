@@ -20,7 +20,7 @@ void VerticalEstimator::predict(float f_t)
     if (z > 0.05)
     {
         w = w + (f_t/m - g)*dt;
-    }
+    }  
 }
 
 // Correct vertical position and velocity with measurement

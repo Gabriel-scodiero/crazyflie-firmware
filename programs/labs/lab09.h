@@ -28,7 +28,7 @@ int main ()
 
     // Initialize interrupts
     tic.attach(&callback, dt);
-    tic_range.attach(&callback_range, dt_range );
+    tic_range.attach(&callback_range, dt_range);
 
     while ( true )
     {
