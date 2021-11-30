@@ -26,7 +26,8 @@ const float kl = 1.726e-08;
 
 // Lab4
 // Constante de arrasto
-const float kd = 1.313e-10;
+// const float kd = 1.313e-10; // TODO: rever
+const float kd = 1.482e-10;
 
 // Lab7
 // Intervalo tempo estimador atitude
@@ -81,11 +82,16 @@ const float l3 = wc_hor;
 
 // Lab12
 // Ganhos controlador horizontal (x)
-const float kp_x = kp_z;
-const float kd_x = kd_z;
+const float OS_x = 0.005;
+const float Ts_x = 2;
+const float zeta_x = abs(log(OS_x))/sqrt(pow(log(OS_x),2) + pow(pi,2));
+const float wn_x = 4/(zeta_x*Ts_x);
+const float kp_x = pow(wn_x,2);
+const float kd_x = 2*zeta_x*wn_x;
+
 // Ganhos controlador horizontal (y)
-const float kp_y = kp_z;
-const float kd_y = kd_z;
+const float kp_y = kp_x;
+const float kd_y = kd_x;
 
 
 #endif
