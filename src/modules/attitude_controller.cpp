@@ -23,5 +23,5 @@ void AttitudeController::control(float phi_r, float theta_r, float psi_r, float 
 // Control torque (N.m) given reference angle (rad) and current angle (rad) and angular velocity (rad/s) with given controller gains
 float AttitudeController::control_siso(float angle_r, float angle, float rate, float kp, float kd)
 {
-    return kp*(angle_r - angle) + kd*(0 - rate);
+    return float(kp*(angle_r - angle) + kd*(-rate));
 }

@@ -46,7 +46,7 @@ int main ()
         {
             flag = false ;
             att_est.estimate();
-            ver_est.predict(ver_cont.f_t/(cos(att_est.phi)*cos(att_est.theta)));
+            ver_est.predict(ver_cont.f_t);
             if ( flag_range )
             {
                 flag_range = false ;
