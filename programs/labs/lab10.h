@@ -22,7 +22,7 @@ void callback_range() { flag_range = true ; }
 int main ()
 {
     // Set references
-    float z_r = 0.5;
+    float z_r = 1.0;
     float phi_r = 0.0;
     float theta_r = 0.0;
     float psi_r = 0.0;
@@ -43,7 +43,7 @@ int main ()
         {
             flag = false;
             att_est.estimate();
-            ver_est.predict(ver_cont.f_t);
+            ver_est.predict(ver_cont.f_t/(cos(att_est.phi)*cos(att_est.theta)));
             if(flag_range)
             {
                 flag_range = false ;

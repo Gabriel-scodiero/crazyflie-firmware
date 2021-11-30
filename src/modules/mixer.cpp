@@ -31,10 +31,10 @@ void Mixer::disarm()
 {
     armed = false;
 
-    motor_1 = 0;
-    motor_2 = 0;
-    motor_3 = 0;
-    motor_4 = 0;
+    motor_1 = 0.0;
+    motor_2 = 0.0;
+    motor_3 = 0.0;
+    motor_4 = 0.0;
 
     disarm_LEDs();    
 }

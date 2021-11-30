@@ -25,8 +25,8 @@ class AttitudeEstimator
         
     private:
         // IMU sensor object
-        MPU9250 imu;
-        // BMI088 imu;
+        // MPU9250 imu;
+        BMI088 imu;
 
         float p_bias, q_bias, r_bias;
 };
