@@ -17,7 +17,6 @@ void VerticalEstimator::init()
 void VerticalEstimator::predict(float f_t)
 {
     z = z + w*dt;
-    // TODO: Comentar?
     if (z > 0.05)
     {
         w = w + (f_t/m - g)*dt;

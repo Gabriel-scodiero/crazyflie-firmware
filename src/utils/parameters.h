@@ -26,8 +26,7 @@ const float kl = 1.726e-08;
 
 // Lab4
 // Constante de arrasto
-// const float kd = 1.313e-10; // TODO: rever
-const float kd = 1.482e-10;
+const float kd = 1.313e-10;
 
 // Lab7
 // Intervalo tempo estimador atitude
@@ -75,21 +74,23 @@ const float kd_z = 2*zeta_z*wn_z;
 
 // Lab11
 // Parâmetros sensor estimador valocidade horizontal
-const float sigma = (2*tan((42*pi/180)/2))/(420*dt);
-// Filtro passa baixa
-const float wc_hor = 50;
-const float l3 = wc_hor;
+//horizontal estimator
+const float gamma = 42.0;               // º
+const float resolution = 420.0;         // px
+const float sigma = (1.0/dt)*(2.0*tan((gamma*pi/180.0)/2.0))/resolution;
+const float l3 = 50; //wc
 
-// Lab12
-// Ganhos controlador horizontal (x)
-const float OS_x = 0.005;
-const float Ts_x = 2;
-const float zeta_x = abs(log(OS_x))/sqrt(pow(log(OS_x),2) + pow(pi,2));
-const float wn_x = 4/(zeta_x*Ts_x);
-const float kp_x = pow(wn_x,2);
-const float kd_x = 2*zeta_x*wn_x;
+const float Ts_hor = 2;
+const float OS_hor = 0.005 ;
+const float zeta_hor = abs(log(OS_hor))/sqrt(pow(log(OS_hor),2) +  pow(pi,2));
+const float wn_hor = 4/(zeta_hor*Ts_hor);
+const float kp_hor = pow(wn_hor,2);
+const float kd_hor = 2*zeta_hor*wn_hor;
+
 
 // Ganhos controlador horizontal (y)
+const float kp_x = kp_hor;
+const float kd_x = kd_hor;
 const float kp_y = kp_x;
 const float kd_y = kd_x;
 
