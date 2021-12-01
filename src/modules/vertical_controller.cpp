@@ -16,5 +16,5 @@ void VerticalController::control (float z_r, float z, float w)
 // Control aceleration given reference position (m) and current position (m) and velocity (m/s) with given controller gains
 float VerticalController::control_siso(float pos_r, float pos, float vel, float kp, float kd)
 {
-    return float(kp*(pos_r - pos) + kd*(vel));
+    return float(kp*(pos_r - pos) + kd*(-vel));
 }
