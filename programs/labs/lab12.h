@@ -24,7 +24,7 @@ void callback_range() { flag_range = true ; }
 int main ()
 {
     // Set references
-    float z_r = 1.0;
+    float z_r = 0.5;
     float x_r = 0.0;
     float y_r = 0.0;
     float psi_r = 0.0;
